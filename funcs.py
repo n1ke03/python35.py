@@ -30,158 +30,68 @@ def DZ_2_1_1_SumOrMul(event):
     print(f"sum is {total}")
   else:
     print(f"mul is {total}")
-    
-    
-def DZ3_2_4_min_max_sum(event):
-# Пользователь вводит с клавиатуры числа. Программа должна подсчитывать сумму, максимум и минимум, 
-# введенных чисел. Когда пользователь вводит число 7 
-# программа прекращает свою работу и выводит на экран 
-# надпись «Good bye!»
-  sum = 0
-  min = None
-  max = None
-  while True:
-    n = input('Введите число')
-    if n:
-      n = int(n)
-    else:
-      return
-    if n==7:
-      print('Good bye')
-      break
-    if min==None and max==None:
-      min = n
-      max = n
-    if n>max:
-      max = n
-    if n<min:
-      min = n
-    sum+=n
-    print(f"min = {min}\nmax = {max}\nsum = {sum}")
-    
-def DZ3_3_4_remove3and6(event):
-# Пользователь вводит любое целое число. Необходимо из этого целого числа удалить все цифры 3 и 6 и 
-# вывести обратно на экран. 
-  n = input('Введите число')
-  if n:
-    n = int(n)
-  else:
-    return
-  # print (''.join(''.join(nStr.split('3')).split('6')))
-  tail = ''
-  while n:
-    if not (n%10==3 or n%10==6):
-      tail = str(n%10) + tail
-    n//=10
-  print(tail)
 
-def DZ4_1_2_strings_replace(event):
-# Пользователь вводит с клавиатуры некоторый текст,
-# после чего пользователь вводит список зарезервированных
-# слов. Необходимо найти в тексте все зарезервированные
-# слова и изменить их регистр на верхний. Вывести на
-# экран измененный текст.
-  text = input('Введите текст')
-  words = input('Введите список зарезервированных слов через пробел').split()
-  for word in words:
-     text = text.replace(word, word.upper())
-  print(text)    
+def Модуль5_часть1_функции_задача1(event):
+  # Задание 1
+  # Напишите функцию, которая отображает на экран
+  # форматированный текст, указанный ниже:
+  # “Don't compare yourself with anyone in this world…
+  # if you do so, you are insulting yourself.”
+  # Bill Gates
 
-def DZ3_5_1_print_figure(event):
-  variant = input('Ведите вариант от "а" до "к"')
-  lenght = int(input('Ведите нечётное число'))
-  string = ''
-  for y in range(lenght):
-    for x in range(lenght):
-      match variant:  
-        case 'а':  
-          if y<=x:
-            string+=' * '
-          else:
-            string+='   '
-        case 'б':
-          if y>=x:
-            string+=' * '
-          else:
-            string+='   '
-        case 'в':
-          if y<=x and y<=lenght-x-1:
-            string+=' * '
-          else:
-            string+='   '
-        case 'г':
-          if y>=lenght-x-1 and y>=x:
-            string+=' * '
-          else:
-            string+='   '  
-        case 'д':
-          if (y>=lenght-x-1 and y>=x) or (y<=x and y<=lenght-x-1):
-            string+=' * '
-          else:
-            string+='   '    
-        case 'е':
-          if (y>=x and y<=lenght-x-1) or (y<=x and y>=lenght-x-1):
-            string+=' * '
-          else:
-            string+='   '  
-        case 'ж':
-          if y>=x and y<=lenght-x-1:
-            string+=' * '
-          else:
-            string+='   '
-        case 'з':
-          if y<=x and y>=lenght-x-1:
-            string+=' * '
-          else:
-            string+='   '  
-        case 'и':
-          if y<=lenght-x-1:
-            string+=' * '
-          else:
-            string+='   '
-        case 'к':
-          if y>=lenght-x-1:
-            string+=' * '
-          else:
-            string+='   ' 
-        case _:
-          pass
-    string += '\n'
-  print(string)
-  
-def DZ5_1_3_print_square(event):
-# Напишите функцию, которая отображает пустой или
-# заполненный квадрат из некоторого символа. Функция
-# принимает в качестве параметров: длину стороны ква-
-# драта, символ и переменную логического типа:
-# ■ если она равна True, квадрат заполненный;
-# ■ если False, квадрат пустой.
+  def text():
+      return print(f"“Don't compare yourself with anyone in this world…\nif you do so, you are insulting yourself.”\nBill Gates")
+  text()
+
+def Модуль5_часть1_функции_задача2(event):
+  # Задание 2
+  # Напишите функцию, которая принимает два числа
+  # в качестве параметра и отображает все четные числа
+  # между ними.
+
+  a = int(input())
+  b = int(input())
+  def num():
+      for i in range(a,b):
+        if i%2==0:
+           print(i)
+  num()
+
+def Модуль5_часть1_функции_задача3(event):
+  # Задание 3
+  # Напишите функцию, которая отображает пустой или
+  # заполненный квадрат из некоторого символа. Функция
+  # принимает в качестве параметров: длину стороны ква-
+  # драта, символ и переменную логического типа:
+  # ■ если она равна True, квадрат заполненный;
+  # ■ если False, квадрат пустой.
+
   def printSquere(lenght:int, simbol:str, fill:bool)->None:
-    l = lenght+2
-    s = ''
-    for x in range(l):
-      for y in range(l):
-        if x==0 or x==l-1:
-          if y==0:
-            s+= ' -'
-          elif y==l-1:
-            s+= ''
-          else:
-            s+= '--'
-        else:
-          if y==0 or y==l-1:
-            if y==0:  
-              s+= '|'
-            if y==l-1:
-              s+= ' |'
-          else:
-            if fill:        
-              s+= ' '+simbol
+      l = lenght+2
+      s = ''
+      for x in range(l):
+        for y in range(l):
+          if x==0 or x==l-1:
+            if y==0:
+              s+= ' -'
+            elif y==l-1:
+              s+= ''
             else:
-              s+= '  '
-      s+='\n'
-    print(s)
-  
+              s+= '--'
+          else:
+            if y==0 or y==l-1:
+              if y==0:  
+                s+= '|'
+              if y==l-1:
+                s+= ' |'
+            else:
+              if fill:        
+                s+= ' '+simbol
+              else:
+                s+= '  '
+        s+='\n'
+      print(s)
+    
   l = int(input('Введите сторону квадрата'))
   s = input('Введите символ')
   z = bool(int(input('Закрашивать? (0,1)')))
@@ -223,4 +133,4 @@ def DZ5_1_3_print_square1(event):
   l = int(input('Введите сторону квадрата'))
   s = input('Введите символ')
   z = bool(int(input('Закрашивать? (0,1)')))
-  printSquere(l, s, z)
+  printSquere(l, s, z)  
