@@ -223,4 +223,4 @@ def DZ5_1_3_print_square1(event):
   l = int(input('Введите сторону квадрата'))
   s = input('Введите символ')
   z = bool(int(input('Закрашивать? (0,1)')))
-  printSquere(l, s, z)  
+  printSquere(l, s, z)
