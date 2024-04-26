@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,28 +14,39 @@
       text-decoration: none;
       background: wheat;
     }
+
     .code span {
       display: none;
     }
+
     .code pre {
       display: block;
     }
-    .hide span{
+
+    .hide span {
       display: inline-block;
       margin: 13px 0;
     }
-    .hide pre{
+
+    .hide pre {
       display: none;
     }
-    #output {
-      margin: 20px 0 0 30px;
+
+    .flex {
+      display: flex;
+      justify-content: space-between;
     }
-    </style>
+
+    #output {
+      margin: 10px;
+    }
+  </style>
   <script type="module" src="./pyscript/core.js"></script>
   <!-- <script type="module" src="./pyodide/pyodide.mjs"></script> -->
   <link rel="stylesheet" href="./pyscript/core.css">
   <script src="./mini-coi.js" scope="./"></script>
 </head>
+
 <body>
   <mpy-config>
     interpreter = "pyodide/pyodide.mjs"
@@ -389,7 +401,7 @@
 <!-- <script type="py" src="./main.py"></script> -->
 <script type="py" src="./funcs.py"></script>
 <script>
-  document.addEventListener('click', (e)=>{
+  document.addEventListener('click', (e) => {
     const parent = e.target.closest('.code')
     if (parent) {
       parent.classList.toggle('hide')
@@ -397,4 +409,5 @@
   })
 </script>
 </body>
+
 </html>
