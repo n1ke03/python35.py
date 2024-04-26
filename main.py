@@ -10,14 +10,14 @@ import re
 # Остальную часть списка не сортировать, а расположить
 # в обратном порядке.
 
-num = []
-for i in range(12):
-  num.append(randint(-5,20))
-print(num)
-def sortTret(list):
-  average = sum(num) / len(num)
-  t = len(num)
-sortTret(list)
+# num = []
+# for i in range(12):
+#   num.append(randint(-5,20))
+# print(num)
+# def sortTret(list):
+#   average = sum(num) / len(num)
+#   t = len(num)
+# sortTret(list)
 
 # Написать программу «успеваемость». Пользователь
 # вводит 10 оценок студента. Оценки от 1 до 12 Реализовать меню для пользователя:

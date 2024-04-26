@@ -264,13 +264,126 @@
   # ■ Вывод отсортированного списка оценок: по возрас-танию или убыванию.
   pass
 
-</code></pre></div><button py-click="DZ_7_1_3">DZ_7_1_3</button><div class="code hide"><span>Показать код</span><pre><code>  # Написать программу «успеваемость». Пользователь
-  # вводит 10 оценок студента. Оценки от 1 до 12 Реализовать меню для пользователя:
-  # ■ Вывод оценок (вывод содержимого списка);
-  # ■ Пересдача экзамена (пользователь вводит номер элемента списка и новую оценку);
-  # ■ Выходит ли стипендия (стипендия выходит, если средний бал не ниже 10.7);
-  # ■ Вывод отсортированного списка оценок: по возрас-танию или убыванию.
-  pass
+</code></pre></div><button py-click="DZ_7_1_3">DZ_7_1_3</button><div class="code hide"><span>Показать код</span><pre><code>  # Написать программу, реализующую сортировку списка
+  # методом усовершенствованной сортировки пузырьковым
+  # методом. Усовершенствование состоит в том, чтобы ана-
+  # лизировать количество перестановок на каждом шагу, если
+  # это количество равно нулю, то продолжать сортировку
+  # нет смысла — список отсортирован.
+  def buble(list):
+    list = []
+    for i in range(12):
+      list.append(randint(-10,10))
+    swapped = True
+    numStartFromBegin = 0
+    numSwapped = 0
+    while swapped: 
+      numStartFromBegin += 1
+      swapped = False 
+      for i in range(len(list) - 1):
+        if list[i] &gt; list[i + 1]: 
+          numSwapped += 1
+          swapped = True 
+          list[i], list[i + 1] = list[i + 1], list[i] 
+    print(list, numStartFromBegin, numSwapped, len(list))
+
+  buble(list)
+
+</code></pre></div></div><div><h2>Практические задания</h2><button py-click="PZ_5_1_1">PZ_5_1_1</button><div class="code hide"><span>Показать код</span><pre><code>#  Напишите функцию, которая отображает на экран
+# форматированный текст, указанный ниже:
+# “Don't let the noise of others' opinions
+# drown out your own inner voice.”
+# Steve Jobs
+  def text():
+      return print(f'“Don\'t let the noise of others\' opinions\ndrown out your own inner voice.”\n\t\t\tSteve Jobs')
+  text()
+
+
+</code></pre></div><button py-click="PZ_5_1_2">PZ_5_1_2</button><div class="code hide"><span>Показать код</span><pre><code>  # Напишите функцию, которая принимает два числа
+  # в качестве параметра и отображает все нечетные числа
+  # между ними.
+  def num(a,b):
+    for i in range(a,b):
+      if i %3==0:
+        print(i)
+  a = int(input('Введите целое число:\n'))
+  b = int(input('Введите целое число:\n'))
+  num(a,b)
+
+</code></pre></div><button py-click="PZ_5_1_4">PZ_5_1_4</button><div class="code hide"><span>Показать код</span><pre><code>  # Напишите функцию, которая возвращает макси-
+  # мальное из четырёх чисел. Числа передаются в качестве
+  # параметров.
+  def max_num(a,b,c,d):
+      return max(a,b,c,d)
+  print(max_num(1,4,7,-3))
+
+</code></pre></div><button py-click="PZ_5_1_5">PZ_5_1_5</button><div class="code hide"><span>Показать код</span><pre><code>  # Напишите функцию, которая возвращает сумму чисел
+  # в указанном диапазоне. Границы диапазона передаются
+  # в качестве параметров.
+  def sumNum(a,b):
+    sum = 0
+    for i in range(a,b):
+      sum+=i
+      print(sum)
+  a = int(input('введите начало диапазона'))
+  b = int(input('введите конец диапазона'))
+  sumNum(a,b)
+
+</code></pre></div><button py-click="PZ_5_1_6">PZ_5_1_6</button><div class="code hide"><span>Показать код</span><pre><code>  # Напишите функцию, которая проверяет является ли
+  # число простым. Число передаётся в качестве параметра.
+  # Если число простое нужно вернуть из метода true, иначе
+  # false.
+  def isPrime(n):
+    if n &lt;= 1:
+      return False
+    for i in range(2, int(n**0.5) + 1):
+      if n % i == 0:
+        return False
+      return True
+  n = int(input('Введите число\n'))  
+  print(isPrime(n))
+
+</code></pre></div><button py-click="PZ_5_1_7">PZ_5_1_7</button><div class="code hide"><span>Показать код</span><pre><code>  # Напишите функцию, которая проверяет является
+  # ли шестизначное число «счастливым». Число передаётся
+  # в качестве параметра. Если число счастливое нужно
+  # вернуть из функции true, иначе false.
+  # «Счастливое шестизначное число» — это число у ко-
+  # торого сумма первых трёх цифр равна сумме трёх вторых
+  # цифр.
+  def happyNum(num):
+    if len(num) != 6:
+      print("Ошибка! Введите шестизначное число.")
+    else:
+      digits = [int(digit) for digit in num]
+      sum1 = digits[0] + digits[1] + digits[2]
+      sum2 = digits[3] + digits[4] + digits[5]
+      if sum1 == sum2:
+        return True
+      else:
+        return False
+  num = int(input("Введите шестизначное число: "))
+  happyNum(num)
+
+</code></pre></div><button py-click="PZ_5_3_1">PZ_5_3_1</button><div class="code hide"><span>Показать код</span><pre><code>  # Напишите функцию, которая проверяет является
+  # ли шестизначное число «счастливым». Число передаётся
+  # в качестве параметра. Если число счастливое нужно
+  # вернуть из функции true, иначе false.
+  # «Счастливое шестизначное число» — это число у ко-
+  # торого сумма первых трёх цифр равна сумме трёх вторых
+  # цифр.
+  def happyNum(num):
+    if len(num) != 6:
+      print("Ошибка! Введите шестизначное число.")
+    else:
+      digits = [int(digit) for digit in num]
+      sum1 = digits[0] + digits[1] + digits[2]
+      sum2 = digits[3] + digits[4] + digits[5]
+      if sum1 == sum2:
+        return True
+      else:
+        return False
+  num = int(input("Введите шестизначное число: "))
+  happyNum(num)
 
 </code></pre></div></div></div></div><div id="outputEnd"></div>
 <!-- <script type="py" src="./main.py"></script> -->

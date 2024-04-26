@@ -272,3 +272,95 @@ def DZ_7_1_3(event):
     print(list, numStartFromBegin, numSwapped, len(list))
 
   buble(list)
+
+def PZ_5_1_1(event):
+#  Напишите функцию, которая отображает на экран
+# форматированный текст, указанный ниже:
+# “Don't let the noise of others' opinions
+# drown out your own inner voice.”
+# Steve Jobs
+  def text():
+      return print(f'“Don\'t let the noise of others\' opinions\ndrown out your own inner voice.”\n\t\t\tSteve Jobs')
+  text()
+
+
+def PZ_5_1_2(event):
+  # Напишите функцию, которая принимает два числа
+  # в качестве параметра и отображает все нечетные числа
+  # между ними.
+  def num(a,b):
+    for i in range(a,b):
+      if i %3==0:
+        print(i)
+  a = int(input('Введите целое число:\n'))
+  b = int(input('Введите целое число:\n'))
+  num(a,b)
+
+def PZ_5_1_4(event):
+  # Напишите функцию, которая возвращает макси-
+  # мальное из четырёх чисел. Числа передаются в качестве
+  # параметров.
+  def max_num(a,b,c,d):
+      return max(a,b,c,d)
+  print(max_num(1,4,7,-3))
+
+def PZ_5_1_5(event):
+  # Напишите функцию, которая возвращает сумму чисел
+  # в указанном диапазоне. Границы диапазона передаются
+  # в качестве параметров.
+  def sumNum(a,b):
+    sum = 0
+    for i in range(a,b):
+      sum+=i
+      print(sum)
+  a = int(input('введите начало диапазона'))
+  b = int(input('введите конец диапазона'))
+  sumNum(a,b)
+
+def PZ_5_1_6(event):
+  # Напишите функцию, которая проверяет является ли
+  # число простым. Число передаётся в качестве параметра.
+  # Если число простое нужно вернуть из метода true, иначе
+  # false.
+  def isPrime(n):
+    if n <= 1:
+      return False
+    for i in range(2, int(n**0.5) + 1):
+      if n % i == 0:
+        return False
+      return True
+  n = int(input('Введите число\n'))  
+  print(isPrime(n))
+
+def PZ_5_1_7(event):
+  # Напишите функцию, которая проверяет является
+  # ли шестизначное число «счастливым». Число передаётся
+  # в качестве параметра. Если число счастливое нужно
+  # вернуть из функции true, иначе false.
+  # «Счастливое шестизначное число» — это число у ко-
+  # торого сумма первых трёх цифр равна сумме трёх вторых
+  # цифр.
+  def happyNum(num):
+    if len(num) != 6:
+      print("Ошибка! Введите шестизначное число.")
+    else:
+      digits = [int(digit) for digit in num]
+      sum1 = digits[0] + digits[1] + digits[2]
+      sum2 = digits[3] + digits[4] + digits[5]
+      if sum1 == sum2:
+        return True
+      else:
+        return False
+  num = int(input("Введите шестизначное число: "))
+  happyNum(num)
+
+def PZ_5_3_1(event):
+  # Написать рекурсивную функцию нахождения степени числа.
+  def power(num,x):
+    if x == 1:
+      return num
+    else:
+      return num ** x
+  num = int(input('введите число\n'))
+  x = int(input('введите степень\n'))
+  print(power(num,x))
