@@ -228,25 +228,6 @@ def DZ_5_3_2(event):
       print('Congrats! I\'s takes ' + str(count) + ' trys')
   recurcive(num, count)
 
-def DZ_7_1_1(event):
-    # Необходимо отсортировать первые две трети списка
-  # в порядке возрастания, если среднее арифметическое
-  # всех элементов больше нуля; иначе — лишь первую треть.
-  # Остальную часть списка не сортировать, а расположить
-  # в обратном порядке.
-  pass
-  
-
-
-def DZ_7_1_2(event):
-  # Написать программу «успеваемость». Пользователь
-  # вводит 10 оценок студента. Оценки от 1 до 12 Реализовать меню для пользователя:
-  # ■ Вывод оценок (вывод содержимого списка);
-  # ■ Пересдача экзамена (пользователь вводит номер элемента списка и новую оценку);
-  # ■ Выходит ли стипендия (стипендия выходит, если средний бал не ниже 10.7);
-  # ■ Вывод отсортированного списка оценок: по возрас-танию или убыванию.
-  pass
-
 def DZ_7_1_3(event):
   # Написать программу, реализующую сортировку списка
   # методом усовершенствованной сортировки пузырьковым
@@ -272,6 +253,44 @@ def DZ_7_1_3(event):
     print(list, numStartFromBegin, numSwapped, len(list))
 
   buble(list)
+
+def DZ_7_3_1(event):
+  # Есть четыре списка целых. Необходимо их объединить
+  # в пятом списке. Полученный результат в зависимости от
+  # выбора пользователя отсортировать по убыванию или
+  # возрастанию. Найти значение, введенное пользователем,
+  # с использованием линейного поиска.
+  def дз7_3_1():
+    list1 = [randint(-20, 20) for i in range(5)]
+    list2 = [randint(-20, 20) for i in range(5)]
+    list3 = [randint(-20, 20) for i in range(5)]
+    list4 = [randint(-20, 20) for i in range(5)]
+    list5 = list1 + list2 + list3 + list4
+    print(list1)
+    print(list2)
+    print(list3)
+    print(list4)
+    print(list5)
+    listSort = int(input('Если хотетите отсортировать по возрастания, то введите 1, если по убыванию, то 0:\n'))
+    if listSort == 1:
+      list5 == list5.sort(reverse=False)
+    elif listSort == 0:
+      list5 == list5.sort(reverse=True)
+    print(list5)
+    def linear_Search(list5, n, key): 
+    # Searching list1 sequentially 
+      for i in range(0, n): 
+          if (list5[i] == key): 
+              return i 
+      return -1
+    key = int(input('Введите искомое число:\n'))
+    n = len(list5)
+    res = linear_Search(list5,n,key)
+    if (res==-1):
+      print('Element not found')
+    else:
+      print('Element found at index: ', res)
+  дз7_3_1()
 
 def PZ_5_1_1(event):
 #  Напишите функцию, которая отображает на экран
