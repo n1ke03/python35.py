@@ -383,3 +383,42 @@ def PZ_5_3_1(event):
   num = int(input('введите число\n'))
   x = int(input('введите степень\n'))
   print(power(num,x))
+
+def PZ_7_1_1(event):
+  #   Написать программу, выполняющую сортировку
+  # списка целых чисел методом пузырьковой сортировки.
+  myList = [randint(-10,10) for i in range(20)]
+  def bubble(myList):
+    print(myList)
+    swapped = True 
+    numStartFromBegin = 0
+    numSwapped = 0
+    while swapped: 
+      numStartFromBegin += 1
+      swapped = False 
+      for i in range(len(myList) - 1):
+        if myList[i] > myList[i + 1]: 
+          numSwapped += 1
+          swapped = True 
+          myList[i], myList[i + 1] = myList[i + 1], myList[i]
+    print(myList)
+  bubble(myList)
+
+def PZ_7_1_2(event):
+  #   Написать программу, выполняющую сортировку
+  # списка целых чисел методом вставок.
+  def insertion_sort(array):
+    print(array)
+    n = len(array)
+    for i in range(1, n):
+        x = array[i]
+        j = i
+
+        while j > 0 and array[j - 1] > x:
+            array[j] = array[j - 1]
+            j -= 1
+
+        array[j] = x
+
+    return array
+  print(insertion_sort([randint(-10,10) for i in range(20)]))

@@ -396,26 +396,53 @@
   num = int(input("Введите шестизначное число: "))
   happyNum(num)
 
-</code></pre></div><button py-click="PZ_5_3_1">PZ_5_3_1</button><div class="code hide"><span>Показать код</span><pre><code>  # Напишите функцию, которая проверяет является
-  # ли шестизначное число «счастливым». Число передаётся
-  # в качестве параметра. Если число счастливое нужно
-  # вернуть из функции true, иначе false.
-  # «Счастливое шестизначное число» — это число у ко-
-  # торого сумма первых трёх цифр равна сумме трёх вторых
-  # цифр.
-  def happyNum(num):
-    if len(num) != 6:
-      print("Ошибка! Введите шестизначное число.")
+</code></pre></div><button py-click="PZ_5_3_1">PZ_5_3_1</button><div class="code hide"><span>Показать код</span><pre><code>  # Написать рекурсивную функцию нахождения степени числа.
+  def power(num,x):
+    if x == 1:
+      return num
     else:
-      digits = [int(digit) for digit in num]
-      sum1 = digits[0] + digits[1] + digits[2]
-      sum2 = digits[3] + digits[4] + digits[5]
-      if sum1 == sum2:
-        return True
-      else:
-        return False
-  num = int(input("Введите шестизначное число: "))
-  happyNum(num)
+      return num ** x
+  num = int(input('введите число\n'))
+  x = int(input('введите степень\n'))
+  print(power(num,x))
+
+</code></pre></div><button py-click="PZ_7_1_1">PZ_7_1_1</button><div class="code hide"><span>Показать код</span><pre><code>  #   Написать программу, выполняющую сортировку
+  # списка целых чисел методом пузырьковой сортировки.
+  myList = [randint(-10,10) for i in range(20)]
+  def bubble(myList):
+    print(myList)
+    swapped = True 
+    numStartFromBegin = 0
+    numSwapped = 0
+    while swapped: 
+      numStartFromBegin += 1
+      swapped = False 
+      for i in range(len(myList) - 1):
+        if myList[i] &gt; myList[i + 1]: 
+          numSwapped += 1
+          swapped = True 
+          myList[i], myList[i + 1] = myList[i + 1], myList[i]
+    print(myList)
+  bubble(myList)
+
+</code></pre></div><button py-click="PZ_7_1_2">PZ_7_1_2</button><div class="code hide"><span>Показать код</span><pre><code>  #   Написать программу, выполняющую сортировку
+  # списка целых чисел методом пузырьковой сортировки.
+  myList = [randint(-10,10) for i in range(20)]
+  def bubble(myList):
+    print(myList)
+    swapped = True 
+    numStartFromBegin = 0
+    numSwapped = 0
+    while swapped: 
+      numStartFromBegin += 1
+      swapped = False 
+      for i in range(len(myList) - 1):
+        if myList[i] &gt; myList[i + 1]: 
+          numSwapped += 1
+          swapped = True 
+          myList[i], myList[i + 1] = myList[i + 1], myList[i]
+    print(myList)
+  bubble(myList)
 
 </code></pre></div></div></div></div><div id="outputEnd"></div>
 <!-- <script type="py" src="./main.py"></script> -->
