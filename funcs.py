@@ -484,3 +484,57 @@ def PZ_7_2_3(event):
   random_list_of_nums = [randint(-20,20)for i in range(20)]  
   quicksort(random_list_of_nums)  
   print(random_list_of_nums)
+
+def DZ_8_1_1(event):
+  # Есть три кортежа целых чисел необходимо найти
+  # элементы, которые есть во всех кортежах.
+  nums1 = [randint(0,5)for i in range(5)]
+  nums2 = [randint(0,5)for i in range(5)]
+  nums3 = [randint(0,5)for i in range(5)]
+  num1 = tuple(nums1)
+  num2 = tuple(nums2)
+  num3 = tuple(nums3)
+  print(nums1)
+  print(nums2)
+  print(nums3)
+  print(num1)
+  print(num2)
+  print(num3)
+  res = tuple(set(num1) & set(num2) & set(num3))
+  print(res)
+
+def DZ_8_1_2(event):
+  # Есть три кортежа целых чисел необходимо найти
+  # элементы, которые уникальны для каждого списка.
+  nums1 = [randint(-5,5)for i in range(5)]
+  nums2 = [randint(-5,5)for i in range(5)]
+  nums3 = [randint(-5,5)for i in range(5)]
+  num1 = tuple(nums1)
+  num2 = tuple(nums2)
+  num3 = tuple(nums3)
+  nums4 = []
+  for item in num1:
+    if item not in num2 and item not in num3:
+      nums4.append(item)
+  num4 = tuple(nums4)
+  # print(num1)
+  # print(num2)
+  # print(num3)
+  print(num4)
+
+def DZ_8_1_3(event):
+  # Есть три кортежа целых чисел необходимо найти эле-
+  # менты, которые есть в каждом из кортежей и находятся
+  # в каждом из кортежей на той же позиции.
+
+  num1 = (2, 3, 1, 2, 0)
+  num2 = (1, 3, 2, 2, 5)
+  num3 = (2, 3, 1, 2, 0)
+  num4 = ()
+  for i in range(min(len(num1), len(num2), len(num3))): 
+      if num1[i] == num2[i] == num3[i]: 
+          num4 += (num1[i],)
+  print(num1)
+  print(num2)
+  print(num3)
+  print(num4)
