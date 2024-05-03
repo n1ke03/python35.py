@@ -49,7 +49,7 @@ for (let string of pyArr) {
 }
 // const code = `<pre><code>${funcBody}</code></pre>`
 // pyToJs += `<div class="code hide"><span>Показать код</span>${code}</div>`
-// now.funcBody = funcBody
+now.funcBody = funcBody
 if (now.type in types) {
   types[now.type].push({ ...now })
 } else {
