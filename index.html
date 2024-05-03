@@ -5,18 +5,49 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat&family=Russo+One&family=Ubuntu+Sans+Mono:wght@400..700&display=swap" rel="stylesheet">
   <style>
+    .russo-one-regular {
+      font-family: "Russo One", sans-serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+    .ubuntu-sans-mono {
+      font-family: "Ubuntu Sans Mono", monospace;
+      font-optical-sizing: auto;
+      font-weight: weight;
+      font-style: normal;
+        }
+    .caveat {
+      font-family: "Caveat", cursive;
+      font-optical-sizing: auto;
+      font-weight: 400;
+      font-style: normal;
+    }
+    button{
+      font-family: "Ubuntu Sans Mono", monospace;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    code{
+      font-family: "Ubuntu Sans Mono", monospace;
+      font-weight: 400;
+      font-size: 12px;
+    }
     a {
       display: block;
       padding: 10px;
       margin: 5px;
       border-radius: 5px;
-      text-decoration: none;
       background: wheat;
+      font-family: 'Russo One', sans-serif;
     }
 
     .code span {
       display: none;
+      background-color: rgba(117, 117, 117, 0.3);
     }
 
     .close {
@@ -34,15 +65,20 @@
     .module p {
       display: inline-block;
       margin: 5px 0 15px 20px;
+      font-family: 'Russo One', sans-serif;
     }
 
     .code pre {
       display: block;
+      background-color: rgba(117, 117, 117, 0.3);
     }
 
     .hide span {
       display: inline-block;
       margin: 13px 0;
+      padding: 5px;
+      border-radius: 10px;
+      font-family: "Caveat", cursive;
     }
 
     .hide pre {
@@ -52,6 +88,7 @@
     .flex {
       display: flex;
       justify-content: space-between;
+      font-family: "Ubuntu Sans Mono", monospace;
     }
 
     #output {
@@ -70,7 +107,7 @@
   </mpy-config>
 
   <div style="display: flex;">
-    <a href="https://disk.yandex.ru/d/rvxmhiSIhDSMCA">Материалы</a>
+    <a href="https://disk.yandex.ru/d/rvxmhiSIhDSMCA" style="color:black">Материалы</a>
   </div>
   <div id="output"><div class="flex"><div><h2>Домашние задания</h2><div class="module close">Модуль 5<p>Открыть</p><br><button py-click="DZ_5_1_1">DZ_5_1_1</button><div class="code hide"><span>Показать код</span><pre><code>  # Задание 1
   # Напишите функцию, которая отображает на экран
