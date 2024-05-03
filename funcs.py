@@ -422,3 +422,65 @@ def PZ_7_1_2(event):
 
     return array
   print(insertion_sort([randint(-10,10) for i in range(20)]))
+
+def PZ_7_2_1(event):
+  # Написать программу, выполняющую сортировку
+  # списка целых чисел методом Шелла.
+  def shell(list):
+      list = [randint(-10,10) for i in range(20)]
+      n = len(list)
+      d = n // 2
+      while d > 0:
+          for i in range(d, n):
+              j = i
+              t = list[i]
+              while j >= d and list[j - d] > t:
+                  list[j] = list[j - d]
+                  j -= d
+              list[j] = t
+          d //= 2
+      return list
+  print(shell(list))
+
+def PZ_7_2_2(event):
+  # Написать программу, выполняющую сортировку
+  # списка целых чисел методом пирамидальной сортировки.
+  def heapify(nums, heap_size, root_index):  
+    largest = root_index
+    left_child = (2 * root_index) + 1
+    right_child = (2 * root_index) + 2
+    if left_child < heap_size and nums[left_child] > nums[largest]:
+      largest = left_child
+    if right_child < heap_size and nums[right_child] > nums[largest]:
+      largest = right_child
+    if largest != root_index:
+      nums[root_index], nums[largest] = nums[largest], nums[root_index]
+      heapify(nums, heap_size, largest)
+  def heap_sort(nums):  
+      n = len(nums)
+      for i in range(n, -1, -1):
+          heapify(nums, n, i)
+      for i in range(n - 1, 0, -1):
+          nums[i], nums[0] = nums[0], nums[i]
+          heapify(nums, i, 0)
+  random_list_of_nums = [randint(-20,20)for i in range(20)]
+  print(random_list_of_nums)
+  heap_sort(random_list_of_nums)  
+  print(random_list_of_nums)
+
+def PZ_7_2_3(event):
+  # Написать программу, выполняющую сортировку
+  # списка целых чисел методом быстрой сортировки.
+  def quicksort(nums):
+    if len(nums) <= 1:
+      return nums
+    else:
+      q = random.choice(nums)
+    l_nums = [n for n in nums if n < q]
+    e_nums = [q] * nums.count(q)
+    b_nums = [n for n in nums if n > q]
+    return quicksort(l_nums) + e_nums + quicksort(b_nums)
+
+  random_list_of_nums = [randint(-20,20)for i in range(20)]  
+  quicksort(random_list_of_nums)  
+  print(random_list_of_nums)
