@@ -535,3 +535,22 @@ def DZ_8_1_3(event):
   print(num2)
   print(num3)
   print(num4)
+
+def DZ_10_1_1(event):
+  # Реализуйте класс «Автомобиль». Необходимо хранить
+  # в полях класса: название модели, год выпуска, произво-
+  # дителя, объем двигателя, цвет машины, цену. Реализуйте
+  # методы класса для ввода данных, вывода данных, реа-
+  # лизуйте доступ к отдельным полям через методы класса.
+  class Cars():
+    def __init__(self, model, year, brand, engine, color, price):
+      self.model = model
+      self.year = year
+      self.brand = brand
+      self.engine = engine
+      self.color = color
+      self.price = price
+    def desc(self):
+      print(f"Автомобиль {self.model}, год выпуска {self.year}, производитель {self.brand}, объём двигателя {self.engine} литра, цвет машины {self.color}, цена {self.price}")
+  Cars1 = Cars("Vesta", 2017, 'Lada', 1.6, 'White', '900k')
+  Cars1.desc()
