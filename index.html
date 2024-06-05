@@ -109,7 +109,24 @@
   <div style="display: flex;">
     <a href="https://disk.yandex.ru/d/rvxmhiSIhDSMCA" style="color:black">Материалы</a>
   </div>
-  <div id="output"><div class="flex"><div><h2>Домашние задания</h2><div class="module close">Модуль 5<p>Открыть</p><br><button py-click="DZ_5_1_1">DZ_5_1_1</button><div class="code hide"><span>Показать код</span><pre><code>  # Задание 1
+  <div id="output"><div class="flex"><div><h2>Домашние задания</h2><button py-click="DZ_10_1_1">DZ_10_1_1</button><div class="code hide"><span>Показать код</span><pre><code>  # Реализуйте класс «Автомобиль». Необходимо хранить
+  # в полях класса: название модели, год выпуска, произво-
+  # дителя, объем двигателя, цвет машины, цену. Реализуйте
+  # методы класса для ввода данных, вывода данных, реа-
+  # лизуйте доступ к отдельным полям через методы класса.
+  class Cars():
+    def __init__(self, model, year, brand, engine, color, price):
+      self.model = model
+      self.year = year
+      self.brand = brand
+      self.engine = engine
+      self.color = color
+      self.price = price
+    def desc(self):
+      print(f"Автомобиль {self.model}, год выпуска {self.year}, производитель {self.brand}, объём двигателя {self.engine} литра, цвет машины {self.color}, цена {self.price}")
+  Cars1 = Cars("Vesta", 2017, 'Lada', 1.6, 'White', '900k')
+  Cars1.desc()
+</code></pre></div><div class="module close">Модуль 5<p>Открыть</p><br><button py-click="DZ_5_1_1">DZ_5_1_1</button><div class="code hide"><span>Показать код</span><pre><code>  # Задание 1
   # Напишите функцию, которая отображает на экран
   # форматированный текст, указанный ниже:
   # “Don't compare yourself with anyone in this world…
@@ -422,6 +439,7 @@
   print(num2)
   print(num3)
   print(num4)
+
 </code></pre></div></div></div><div><h2>Практические задания</h2><div class="module close">Модуль 5<p>Открыть</p><br><button py-click="PZ_5_1_1">PZ_5_1_1</button><div class="code hide"><span>Показать код</span><pre><code>#  Напишите функцию, которая отображает на экран
 # форматированный текст, указанный ниже:
 # “Don't let the noise of others' opinions
