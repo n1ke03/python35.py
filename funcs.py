@@ -554,3 +554,22 @@ def DZ_10_1_1(event):
       print(f"Автомобиль {self.model}, год выпуска {self.year}, производитель {self.brand}, объём двигателя {self.engine} литра, цвет машины {self.color}, цена {self.price}")
   Cars1 = Cars("Vesta", 2017, 'Lada', 1.6, 'White', '900k')
   Cars1.desc()
+
+def DZ_10_1_2(event):
+  # Реализуйте класс «Книга». Необходимо хранить в
+  # полях класса: название книги, год выпуска, издателя,
+  # жанр, автора, цену. Реализуйте методы класса для ввода
+  # данных, вывода данных, реализуйте доступ к отдельным
+  # полям через методы класса.
+  class books():
+    def __init__(self, name, year, publisher, genre, autor, price):
+      self.name = name
+      self.year = year
+      self.publisher = publisher
+      self.genre = genre
+      self.autor = autor
+      self.price = price
+    def book(self):
+      print(f'Книга {self.name} выпущенная в {self.year} году издателем {self.publisher} в жанре {self.genre} написанная автором {self.autor} стоимостью {self.price}')
+  book1 = books("Тарас Бульба", 1835, 'Михаилом Погодиным', 'повесть', 'Николай Васильевич Гоголь', '10p')
+  book1.book()

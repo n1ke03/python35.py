@@ -109,7 +109,7 @@
   <div style="display: flex;">
     <a href="https://disk.yandex.ru/d/rvxmhiSIhDSMCA" style="color:black">Материалы</a>
   </div>
-  <div id="output"><div class="flex"><div><h2>Домашние задания</h2><button py-click="DZ_10_1_1">DZ_10_1_1</button><div class="code hide"><span>Показать код</span><pre><code>  # Реализуйте класс «Автомобиль». Необходимо хранить
+  <div id="output"><div class="flex"><div><h2>Домашние задания</h2><div class="module close">Модуль 10<p>Открыть</p><br><button py-click="DZ_10_1_1">DZ_10_1_1</button><div class="code hide"><span>Показать код</span><pre><code>  # Реализуйте класс «Автомобиль». Необходимо хранить
   # в полях класса: название модели, год выпуска, произво-
   # дителя, объем двигателя, цвет машины, цену. Реализуйте
   # методы класса для ввода данных, вывода данных, реа-
@@ -126,7 +126,25 @@
       print(f"Автомобиль {self.model}, год выпуска {self.year}, производитель {self.brand}, объём двигателя {self.engine} литра, цвет машины {self.color}, цена {self.price}")
   Cars1 = Cars("Vesta", 2017, 'Lada', 1.6, 'White', '900k')
   Cars1.desc()
-</code></pre></div><div class="module close">Модуль 5<p>Открыть</p><br><button py-click="DZ_5_1_1">DZ_5_1_1</button><div class="code hide"><span>Показать код</span><pre><code>  # Задание 1
+
+</code></pre></div><button py-click="DZ_10_1_2">DZ_10_1_2</button><div class="code hide"><span>Показать код</span><pre><code>  # Реализуйте класс «Книга». Необходимо хранить в
+  # полях класса: название книги, год выпуска, издателя,
+  # жанр, автора, цену. Реализуйте методы класса для ввода
+  # данных, вывода данных, реализуйте доступ к отдельным
+  # полям через методы класса.
+  class books():
+    def __init__(self, name, year, publisher, genre, autor, price):
+      self.name = name
+      self.year = year
+      self.publisher = publisher
+      self.genre = genre
+      self.autor = autor
+      self.price = price
+    def book(self):
+      print(f'Книга {self.name} выпущенная в {self.year} году издателем {self.publisher} в жанре {self.genre} написанная автором {self.autor} стоимостью {self.price}')
+  book1 = books("Тарас Бульба", 1835, 'Михаилом Погодиным', 'повесть', 'Николай Васильевич Гоголь', '10p')
+  book1.book()
+</code></pre></div></div><div class="module close">Модуль 5<p>Открыть</p><br><button py-click="DZ_5_1_1">DZ_5_1_1</button><div class="code hide"><span>Показать код</span><pre><code>  # Задание 1
   # Напишите функцию, которая отображает на экран
   # форматированный текст, указанный ниже:
   # “Don't compare yourself with anyone in this world…
