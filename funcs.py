@@ -573,3 +573,55 @@ def DZ_10_1_2(event):
       print(f'Книга {self.name} выпущенная в {self.year} году издателем {self.publisher} в жанре {self.genre} написанная автором {self.autor} стоимостью {self.price}')
   book1 = books("Тарас Бульба", 1835, 'Михаилом Погодиным', 'повесть', 'Николай Васильевич Гоголь', '10p')
   book1.book()
+
+  
+def DZ_10_1_3(event):
+  # Реализуйте класс «Стадион». Необходимо хранить в
+  # полях класса: название стадиона, дату открытия, страну,
+  # город, вместимость. Реализуйте методы класса для ввода
+  # данных, вывода данных, реализуйте доступ к отдельным
+  # полям через методы класса.
+
+  class stadiums():
+    def __init__(self, name, date, country, city, capacity):
+      self.name = name
+      self.date = date
+      self.country = country
+      self.city = city
+      self.capacity = capacity
+    def stadium(self):
+      print(f'Стадион {self.name} построенный в {self.date} году в {self.country} городе {self.city} вместимостью {self.capacity} человек')
+  stadium1 = stadiums("Строитель", 1963, 'России', 'Тольятти', 15000)
+  stadium1.stadium()
+
+def DZ_10_5_2(event):
+    # Создайте класс Complex (комплексное число).
+    # Создайте перегруженные операторы для реализации
+    # арифметических операций для по работе с комплексными
+    # числами (операции +, -, *, /).
+
+  class Complex:
+    def __init__(self, real, imag):
+      self.real = real
+      self.imag = imag
+    def __repr__(self):
+      return str(self.real) + ('+' if self.imag>=0 else '') + str(self.imag) + 'i'
+    def __add__(self, other):
+      return Complex(self.real + other.real,self.imag + other.imag)
+    def __sub__(self,other):
+      return Complex(self.real - other.real,self.imag - other.imag)
+    def __mul__(self,other):
+      return Complex(self.real * other.real + self.imag * other.imag * -1, self.real*other.imag+self.imag*other.real)
+    def __truediv__(self,other):
+      z3 = Complex(other.real, -other.imag)
+      delitel = (z3*other).real
+      z4 = z3*self
+      return Complex(z4.real/delitel , z4.imag/delitel)
+    
+  z1 = Complex(-4,2)
+  z2 = Complex(1,-3)
+  print(z1,'\n',z2)
+  print('сумма = ',z1+z2)
+  print('разность = ',z1-z2)
+  print('умножение = ',z1*z2)
+  print('деление = ',z1/z2)
