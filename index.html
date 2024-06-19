@@ -510,6 +510,47 @@
   print('разность = ',z1-z2)
   print('умножение = ',z1*z2)
   print('деление = ',z1/z2)
+
+</code></pre></div><button py-click="DZ_10_декораторы_1">DZ_10_декораторы_1</button><div class="code hide"><span>Показать код</span><pre><code>  # Создайте функцию, возвращающую список со всеми
+  # простыми числами от 0 до 1000
+  # Используя механизм декораторов посчитайте сколько
+  # секунд, потребовалось для вычисления всех простых чисел.
+  # Отобразите на экран количество секунд и простые числа.
+  start_time = time.time()
+  def prime(x):
+    for i in range(2,x):
+      if x % i == 0:
+        return False
+      return True
+  primeNum = [] 
+  for number in range(0,1000):
+    if prime(number ):
+      primeNum.append(number)    
+  end_time = time.time()
+  print(primeNum)
+  print('заняло времени:', end_time - start_time)
+
+
+</code></pre></div><button py-click="DZ_10_декораторы_2">DZ_10_декораторы_2</button><div class="code hide"><span>Показать код</span><pre><code>  start_time = time.time()
+  def prime(x):
+    for i in range(2,x):
+      if x % i == 0:
+        return False
+      return True
+
+  primeNum = []
+  a = int(input('введите начало диапазона: ')) 
+  b = int(input('введите конец диапазона: ')) 
+  if a&lt;b:
+    for number in range(a,b):
+      if prime(number ):
+        primeNum.append(number)
+
+    end_time = time.time()
+    print(primeNum)
+    print('time:', end_time - start_time)
+  else:
+    print('не верный диапазон') 
 </code></pre></div></div></div><div><h2>Практические задания</h2><div class="module close">Модуль 5<p>Открыть</p><br><button py-click="PZ_5_1_1">PZ_5_1_1</button><div class="code hide"><span>Показать код</span><pre><code>#  Напишите функцию, которая отображает на экран
 # форматированный текст, указанный ниже:
 # “Don't let the noise of others' opinions

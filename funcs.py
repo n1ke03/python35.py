@@ -3,6 +3,7 @@ import string
 import random
 from random import randint
 import re
+import time
 # node makehtml.js
 
 with contextlib.suppress(ImportError):
@@ -625,3 +626,46 @@ def DZ_10_5_2(event):
   print('разность = ',z1-z2)
   print('умножение = ',z1*z2)
   print('деление = ',z1/z2)
+
+def DZ_10_декораторы_1(event):
+  # Создайте функцию, возвращающую список со всеми
+  # простыми числами от 0 до 1000
+  # Используя механизм декораторов посчитайте сколько
+  # секунд, потребовалось для вычисления всех простых чисел.
+  # Отобразите на экран количество секунд и простые числа.
+  start_time = time.time()
+  def prime(x):
+    for i in range(2,x):
+      if x % i == 0:
+        return False
+      return True
+  primeNum = [] 
+  for number in range(0,1000):
+    if prime(number ):
+      primeNum.append(number)    
+  end_time = time.time()
+  print(primeNum)
+  print('заняло времени:', end_time - start_time)
+
+
+def DZ_10_декораторы_2(event):
+  start_time = time.time()
+  def prime(x):
+    for i in range(2,x):
+      if x % i == 0:
+        return False
+      return True
+
+  primeNum = []
+  a = int(input('введите начало диапазона: ')) 
+  b = int(input('введите конец диапазона: ')) 
+  if a<b:
+    for number in range(a,b):
+      if prime(number ):
+        primeNum.append(number)
+
+    end_time = time.time()
+    print(primeNum)
+    print('time:', end_time - start_time)
+  else:
+    print('не верный диапазон') 
