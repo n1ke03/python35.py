@@ -8,5 +8,3 @@ import math as m
 from math import pi as PI, sin as SinusFunction
 
 
-
-     

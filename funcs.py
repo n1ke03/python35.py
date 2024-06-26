@@ -669,3 +669,240 @@ def DZ_10_декораторы_2(event):
     print('time:', end_time - start_time)
   else:
     print('не верный диапазон') 
+
+def DZ_12_1_1(event):
+  # Создайте реализацию паттерна Builder. Протестируйте
+  # работу созданного класса.
+  class Pasta:
+    def __init__(self, settings):
+      self.base = settings['base']
+      self.sauce = settings['соус']
+      self.ham = settings['ветчина']
+      self.cheese = settings['сыр']
+      self.pepper = settings['перец']
+      self.chicken = settings['курица']
+      self.fish = settings['рыба']
+      self.pork = settings['свинина'] 
+      self.beef = settings['говядина']
+
+  class PastaBuilder:
+    settings = {
+    'base': 1,
+    'соус': 0,
+    'ветчина': 0,
+    'сыр': 0,
+    'перец': 0,
+    'курица': 0,
+    'рыба': 0,
+    'свинина': 0,
+    'говядина': 0,
+    }
+      
+    def addBase(self):
+      self.settings['base'] += 1
+      return self
+    
+    def addSauce(self):
+      self.settings['соус'] += 1
+      return self
+    
+    def addHam(self):
+      self.settings['ветчина'] += 1
+      return self
+    
+    def addCheese(self):
+      self.settings['сыр'] += 1
+      return self
+    
+    def addPepper(self):
+      self.settings['перец'] += 1
+      return self
+    
+    def addChicken(self):
+      self.settings['курица'] += 1
+      return self
+    
+    def addFish(self):
+      self.settings['рыба'] += 1
+      return self
+    
+    def addPork(self):
+      self.settings['свинина'] += 1
+      return self
+    
+    def addBeef(self):
+      self.settings['говядина'] += 1
+      return self
+    
+    def build(self):
+      return Pasta(self.settings)
+  print(PastaBuilder().addCheese().addHam().addHam().addChicken().addPepper().build().__dict__)
+
+def DZ_12_1_2(event):
+  # Создайте приложение для приготовления пасты. При-
+  # ложение должно уметь создавать минимум три вида па-
+  # сты. Классы различной пасты должны иметь следующие
+  # методы:
+  # ■ Тип пасты;
+  # ■ Соус;
+  # ■ Начинка;
+  # ■ Добавки.
+  # Для реализации используйте порождающие паттерны.
+
+  class Pasta:
+    def __init__(self, settings):
+      self.base = settings['base']
+      self.sauce = settings['соус']
+      self.ham = settings['ветчина']
+      self.cheese = settings['сыр']
+      self.pepper = settings['перец']
+      self.chicken = settings['курица']
+      self.fish = settings['рыба']
+      self.pork = settings['свинина'] 
+      self.beef = settings['говядина']
+
+  class PastaBuilder:
+    settings = {
+    'base': 1,
+    'соус': 0,
+    'ветчина': 0,
+    'сыр': 0,
+    'перец': 0,
+    'курица': 0,
+    'рыба': 0,
+    'свинина': 0,
+    'говядина': 0,
+    }
+      
+    def addBase(self):
+      self.settings['base'] += 1
+      return self
+    
+    def addSauce(self):
+      self.settings['соус'] += 1
+      return self
+    
+    def addHam(self):
+      self.settings['ветчина'] += 1
+      return self
+    
+    def addCheese(self):
+      self.settings['сыр'] += 1
+      return self
+    
+    def addPepper(self):
+      self.settings['перец'] += 1
+      return self
+    
+    def addChicken(self):
+      self.settings['курица'] += 1
+      return self
+    
+    def addFish(self):
+      self.settings['рыба'] += 1
+      return self
+    
+    def addPork(self):
+      self.settings['свинина'] += 1
+      return self
+    
+    def addBeef(self):
+      self.settings['говядина'] += 1
+      return self
+    
+    def build(self):
+      return Pasta(self.settings)
+  print(PastaBuilder().addCheese().addHam().addHam().addChicken().addPepper().build().__dict__)
+
+def DZ_14_1_1(event):
+  # Пользователь вводит с клавиатуры набор чисел. По-
+  # лученные числа необходимо сохранить в список (тип
+  # списка нужно выбрать в зависимости от поставленной
+  # ниже задачи). После чего нужно показать меню, в котором
+  # предложить пользователю набор пунктов:
+  #   1 Добавить новое число в список (если такое число су-
+  # ществует в списке, нужно вывести сообщение поль-
+  # зователю об этом, без добавления числа).
+  #   2 Удалить все вхождения числа из списка (пользователь
+  # вводит с клавиатуры число для удаления).
+  #   3 Показать содержимое списка (в зависимости от вы-
+  # бора пользователя список нужно показать с начала
+  # или с конца).
+  #   4 Проверить есть ли значение в списке.
+  #   5 Заменить значение в списке (пользователь опреде-
+  # ляет заменить ли только первое вхождение или все
+  # вхождения).
+  # В зависимости от выбора пользователя выполняется
+  # действие, после чего меню отображается снова.
+
+  numbers = []
+  
+  def add_number():
+      num = int(input("Введите число: "))
+      if num in numbers:
+          print("Это число уже есть в списке")
+      else:
+          numbers.append(num)
+          print("Число успешно добавлен")
+  
+  def remove_number():
+      num = int(input("Введите число для удаления: "))
+      numbers[:] = [x for x in numbers if x != num]
+      print("Все вхождения числа удалены")
+  
+  
+  def show_list():
+      direction = input("Введите направление (начало/конец): ")
+      if direction == "начало":
+          print(numbers)
+      elif direction == "конец":
+          print(numbers[::-1])
+  
+  
+  def check_value():
+      num = int(input("Введите число для проверки: "))
+      if num in numbers:
+          print("Значение есть в списке")
+      else:
+          print("Значение отсутствует в списке")
+  
+  
+  def replace_value():
+      global numbers
+      num = int(input("Введите число для замены: "))
+      replace_num = int(input("Введите новое число: "))
+      replace_all = input("Заменить все совпадения? (да/нет): ")
+      if replace_all == "да":
+          numbers = [replace_num if x == num else x for x in numbers]
+      else:
+          index = numbers.index(num)
+          numbers[index] = replace_num
+      print("Значение успешно заменено")
+  
+  
+  while True:
+      print("Меню:")
+      print("1. Добавить новое число в список")
+      print("2. Удалить все вхождения числа из списка")
+      print("3. Показать содержимое списка")
+      print("4. Проверить есть ли значение в списке")
+      print("5. Заменить значение в списке")
+      print("6. Выход")
+  
+      choice = input("Выберите пункт меню: ")
+  
+      if choice == "1":
+          add_number()
+      elif choice == "2":
+          remove_number()
+      elif choice == "3":
+          show_list()
+      elif choice == "4":
+          check_value()
+      elif choice == "5":
+          replace_value()
+      elif choice == '6':
+          break 
+      else:
+          print("Некорректный выбор. Попробуйте еще раз.")
+  print(numbers)
