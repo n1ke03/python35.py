@@ -965,8 +965,9 @@ def DZ_12_2_2(event):
       pass
   class NumberSet(NumberSetInterface):
     def __init__(self, filename):
-      self.filename = filename
+      self.filename = open("numbers.txt","a")
       self.numbers = []
+      self.filename = filename
       
     def get_sum(self):
       return sum(numbers)
@@ -978,8 +979,9 @@ def DZ_12_2_2(event):
       return min(numbers)
     
     def get_number(self):
-      with open(self.filename, 'rt') as file:
-        self.numbers = [randint(0,100) for _ in range(10)]
+      with open("numbers.txt", 'a') as filename:
+        self.numbers = [randint(-100,100) for _ in range(30)]
+        filename.write(f"numbers: {self.numbers}\n")
       return self.numbers
     
     def update_numbers(self):
