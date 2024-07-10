@@ -5,6 +5,7 @@ import random
 from random import randint
 import re
 import time
+from abc import ABC, abstractmethod
 # node makehtml.js
 
 with contextlib.suppress(ImportError):
@@ -944,4 +945,80 @@ def DZ_12_1_3(event):
   print(myRectClone,myRectClone.__dict__)
   myRect.p1.x = 90
   print(myRectClone.p1.x)
+
+def DZ_12_2_2(event):
+  
+  #  Есть класс, предоставляющий доступ к набору чисел.
+  # Источником этого набора чисел является некоторый файл. 
+  #  С определенной периодичностью данные в файле
+  # меняются (надо реализовать механизм обновления).
+  #  Приложение должно получать доступ к этим данным и
+  # выполнять набор операций над ними (сумма, максимум, минимум и т.д.). 
+  #  При каждой попытке доступа к этому
+  # набору необходимо вносить запись в лог-файл. При ре-
+  # ализации используйте паттерн Proxy (для логгирования)
+  # и другие необходимые паттерны.
+  
+  class NumberSetInterface(ABC):
+    @abstractmethod
+    def get_number(self):
+      pass
+  class NumberSet(NumberSetInterface):
+    def __init__(self, filename):
+      self.filename = filename
+      self.numbers = []
+      
+    def get_sum(self):
+      return sum(numbers)
+    
+    def get_max(self):
+      return max(numbers)
+    
+    def get_min(self):
+      return min(numbers)
+    
+    def get_number(self):
+      with open(self.filename, 'rt') as file:
+        self.numbers = [randint(0,100) for _ in range(10)]
+      return self.numbers
+    
+    def update_numbers(self):
+      pass
+
+  class NumberSetProxy(NumberSetInterface):
+    def __init__(self, number_set):
+      self.number_set = number_set
+      self.log_file = open("log.txt", "a")
+    
+    def _write_to_log(self, message):
+      self.log_file.write(message + "\n")
+    
+    def get_number(self):
+      numbers = number_set.get_number()
+      with open('log.txt', 'a') as log_file:
+        log_file.write(f'Numbers: {numbers}\n')
+      return numbers
+    
+    def get_sum(self):
+      result = number_set.get_sum()
+      self._write_to_log(f"Sum calculated: {result}")
+      return result
+    
+    def get_max(self):
+      result = number_set.get_max()
+      self._write_to_log(f"Max number found: {result}")
+      return result
+    
+    def get_min(self):
+      result = number_set.get_min()
+      self._write_to_log(f"Min number found: {result}")
+      return result
+
+  number_set = NumberSet('numbers.txt')
+  proxy = NumberSetProxy(number_set)
+  numbers = proxy.get_number()
+  print(numbers)
+  print(proxy.get_sum())
+  print(proxy.get_max())
+  print(proxy.get_min())
 
