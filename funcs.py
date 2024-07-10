@@ -909,6 +909,7 @@ def DZ_14_1_1(event):
   print(numbers)
 
 def DZ_12_1_3(event):
+
   class Point:
     def __init__(self, x,y):
       self.x = x
@@ -943,3 +944,4 @@ def DZ_12_1_3(event):
   print(myRectClone,myRectClone.__dict__)
   myRect.p1.x = 90
   print(myRectClone.p1.x)
+
