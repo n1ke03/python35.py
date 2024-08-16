@@ -31,4 +31,4 @@ class TestSum(unittest.TestCase):
     self.assertEqual(num.max(),6,'Should be 6')
     self.assertEqual(num.min(),1,'Should be 1')
 if __name__ == '__main__':
-  unittest.main
+  unittest.main()
